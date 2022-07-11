@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <title>MM+ Score calculator</title>
+</head>
+<body>
+    <header class="header">
+        <h1>MM+ Calculator</h1>
+    </header>
+
+    <section class="container intro">
+        <h2>Calculate your key score</h2>
+        <p>Enter the desired key data here.</p>
+        <ul>
+            <li>Key level corresponds to the desired key level.</li>
+            <li>Best key matches if the key you enter is better than the Fortified or Tyranical key.</li>
+            <li>Last point you can put a value between -40% and 40% which corresponds to the time of the key which adds or removes bonus points.</li>
+        </ul>
+        <p>
+            There may be a difference between the points displayed and the points obtained in game.
+        </p>
+    </section>
+
+    <section class="container calculator">
+        <div class="m-15">
+            <label for="key_input">Key level (between 15 and 30):</label>
+            <input type="range" id="key_input" max="30" min="15" step="1" value="15" oninput="this.nextElementSibling.value = this.value">
+            <output>15</output>
+        </div>
+        <div class="m-15">
+            <label for="best_key_input">Best Key:</label>
+            <input type="checkbox" id="best_key_input" value="best_key_input" checked="false">
+        </div>
+        <div class="m-15">
+            <label for="time_key_input">Bonus/Malus time (between -40% and 40%):</label>
+            <input type="number" class="time_key_input" max="40" min="-40" id="time_key_input" value="0">
+        </div>
+        <button id="calculator_button" class="m-15" type="button">Tell me my score!</button>
+        <h2 class="m-15" id="result">PLACEHOLDER</h2>
+    </section>
+
+    <footer class="footer">
+        <p>
+            Code written by <a href="https://worldofwarcraft.com/fr-fr/character/eu/dalaran/eldau" target="_blank">Eldau</a>
+        </p>
+    </footer>
+</body>
+
+<script src="timed.js"></script>
+</html>
