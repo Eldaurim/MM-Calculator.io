@@ -72,7 +72,7 @@ function keystone_point_calculator() {
   if (best_key === true) {
     keystone_point = keystone_point * 1.5;
   } else {
-    keystone_point = keystone_point * 0.5;
+    //keystone_point = keystone_point * 0.5;
   }
 
   // Calcul of timer
@@ -89,6 +89,10 @@ function keystone_point_calculator() {
   } else if (percent_time <= -40) {
     return 0;
   }
+
+  if(best_key === false) {
+    keystone_point = keystone_point * 0.5;
+  } 
 
   // Readeable values
   return Math.round(keystone_point * 10) / 10;
