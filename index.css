@@ -19,14 +19,24 @@ body {
 
 .calculator {
     color: #cccccc;
-    font-size: 12px;
+    font-size: 22px;
     text-align: center;
     align-items: center;
 
 }
 
-.time_key_input {
+#key_input{
+    width: 160px;
+}
+
+#time_key_input {
     width: 50px;
+    height: 30px;
+}
+
+#best_key_input{
+    width: 20px;
+    height: 20px;
 }
 
 .m-15{
@@ -36,7 +46,7 @@ body {
 .footer {
     text-align: center;
     background: #020202;
-    padding: 20px 0 30px 0;
+    padding: 22px 0 30px 0;
 }
 
 a, p, h1, h2 , ul, li{
@@ -48,7 +58,15 @@ a , a:visited, a:hover {
 }
 
 p, ul, li{
-    font-size: 12px;
+    font-size: 20px;
+}
+
+h1{
+    font-size: 44px;
+}
+
+h2{
+    font-size: 36px;
 }
 
 ul, li {
