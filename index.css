@@ -70,5 +70,12 @@ h2{
 }
 
 ul, li {
+    padding: 0;
     list-style: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        margin: 50px 15px 50px 15px;
+    }
 }
