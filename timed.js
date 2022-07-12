@@ -82,7 +82,7 @@ function keystone_point_calculator() {
   if (percent_time >= 0 && percent_time <= 39) {
     keystone_point =
       keystone_point + (bonus_timer_point / bonus_max_percent) * percent_time;
-  } else if (percent_time <= 0 && percent_time >= -39) {
+  } else if (percent_time <= 0 && percent_time >= -40) {
     keystone_point =
       keystone_point -
       (loose_timer_point / loose_max_percent) * Math.abs(percent_time);
