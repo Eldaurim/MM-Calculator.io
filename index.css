@@ -29,7 +29,7 @@ body {
     width: 160px;
 }
 
-#time_key_input {
+.input {
     width: 80px;
     height: 40px;
     border-radius: 50px;
@@ -37,6 +37,31 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     border: 0px black solid;
+}
+
+.input_header {
+    width: 180px;
+    height: 40px;
+    border-radius: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    border: 0px black solid;
+}
+
+#Error_div{
+    color: rgb(190, 0, 0);
+}
+
+.input_header-left{
+    margin-left: 50px;
+}
+
+.lowercase{
+    text-transform: lowercase;
+}
+
+#fetch_button{
+    margin-left: 50px;
 }
 
 #best_key_input{
@@ -93,8 +118,65 @@ button {
     font-family: 'Raleway', sans-serif;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
+.keys_group{
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+
+.key_content{
+    display: flex;
+    width: 20%;
+    height: 115px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.name {
+    width: 33%;
+}
+
+.fortified{
+    padding-right: 4px;
+}
+
+.key_content p{
+    font-size: 12px;
+}
+
+.best{
+    color: rgb(192, 192, 2);
+}
+
 @media screen and (max-width: 1000px) {
     .container {
         margin: 50px 15px 50px 15px;
     }
+
+    .keys_group{
+        display: block;
+    }
+
+    .key_content{
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .input_header{
+        display: flex;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    #fetch_button{
+        margin-left: 0px;
+        margin-top: 25px;
+    }
 }
+

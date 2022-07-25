@@ -25,7 +25,6 @@ calculator_button.addEventListener("click", function (event) {
   let keystone_point_result = keystone_point_calculator();
 
   document.getElementById("result").innerHTML = keystone_point_result;
-  console.log(keystone_point_result);
 });
 
 /**
@@ -92,7 +91,7 @@ function keystone_point_calculator() {
 
   if(best_key === false) {
     keystone_point = keystone_point * 0.5;
-  } 
+  }
 
   // Readeable values
   return Math.round(keystone_point * 10) / 10;
