@@ -105,15 +105,19 @@ function bestkey(value) {
     key_name.classList.add("name");
     key_name.innerHTML = key.dungeon;
 
+    let column = document.createElement("div");
+    column.classList.add("column");
+
     //Fortified table
     let fortified = document.createElement("div");
     fortified.classList.add("fortified");
 
     //Key level
-    let key_fortified_level = document.createElement("p");
+    let key_fortified_level = document.createElement("a");
     key_fortified_level.classList.add("key_level");
     key_fortified_level.classList.add("fortified");
     key_fortified_level.setAttribute("id", key.dungeon+"_fortified_level");
+    key_fortified_level.setAttribute("target", "_blank");
 
     //Key score
     let fortified_score = document.createElement("p");
@@ -130,10 +134,11 @@ function bestkey(value) {
     tyranical.classList.add("tyranical");
 
     //Key level
-    let key_tyranical_level = document.createElement("p");
+    let key_tyranical_level = document.createElement("a");
     key_tyranical_level.classList.add("key_level");
     key_tyranical_level.classList.add("tyranical");
     key_tyranical_level.setAttribute("id", key.dungeon+"_tyranical_level");
+    key_tyranical_level.setAttribute("target", "_blank");
 
     //Key score
     let tyranical_score = document.createElement("p");
@@ -152,6 +157,7 @@ function bestkey(value) {
     if(key.affixes[0].id === 9) {
       key_tyranical_level.classList.add("best");
       key_tyranical_level.innerHTML = key.affixes[0].name + " +" + key.mythic_level;
+      key_tyranical_level.setAttribute("href", key.url);
       tyranical_score.innerHTML = (key.score*1.5).toFixed(1);
       tyranical_time.innerHTML = pourcent + "%";
     }
@@ -159,6 +165,7 @@ function bestkey(value) {
     if(key.affixes[0].id === 10) {
       key_fortified_level.classList.add("best");
       key_fortified_level.innerHTML = key.affixes[0].name + " +" + key.mythic_level;
+      key_fortified_level.setAttribute("href", key.url);
       fortified_score.innerHTML = (key.score*1.5).toFixed(1);
       fortified_time.innerHTML = pourcent + "%";
     }
@@ -170,26 +177,28 @@ function bestkey(value) {
     if(index < 5) {
       document.getElementById("group_one").appendChild(key_content);
       key_content.appendChild(key_name);
+      key_content.appendChild(column);
       
-      key_content.appendChild(fortified);
+      column.appendChild(fortified);
         fortified.appendChild(key_fortified_level);
         fortified.appendChild(fortified_score);
         fortified.appendChild(fortified_time);
 
-      key_content.appendChild(tyranical);
+        column.appendChild(tyranical);
         tyranical.appendChild(key_tyranical_level);
         tyranical.appendChild(tyranical_score);
         tyranical.appendChild(tyranical_time);
     } else {
       document.getElementById("group_two").appendChild(key_content);
       key_content.appendChild(key_name);
+      key_content.appendChild(column);
 
-      key_content.appendChild(fortified);
+      column.appendChild(fortified);
         fortified.appendChild(key_fortified_level);
         fortified.appendChild(fortified_score);
         fortified.appendChild(fortified_time);
 
-      key_content.appendChild(tyranical);
+        column.appendChild(tyranical);
         tyranical.appendChild(key_tyranical_level);
         tyranical.appendChild(tyranical_score);
         tyranical.appendChild(tyranical_time);
@@ -210,12 +219,14 @@ function lowestkey(value) {
 
     if(key.affixes[0].id === 9){
       document.getElementById(key.dungeon+"_tyranical_level").innerHTML = key.affixes[0].name + " +" + key.mythic_level;
+      document.getElementById(key.dungeon+"_tyranical_level").setAttribute("href", key.url);
       document.getElementById(key.dungeon+"_tyranical_score").innerHTML = (key.score*0.5).toFixed(1);
       document.getElementById(key.dungeon+"_tyranical_time").innerHTML = pourcent+"%";
     }
 
     if(key.affixes[0].id === 10){
       document.getElementById(key.dungeon+"_fortified_level").innerHTML = key.affixes[0].name + " +" + key.mythic_level;
+      document.getElementById(key.dungeon+"_fortified_level").setAttribute("href", key.url);
       document.getElementById(key.dungeon+"_fortified_score").innerHTML = (key.score*0.5).toFixed(1);
       document.getElementById(key.dungeon+"_fortified_time").innerHTML = pourcent+"%";
     }

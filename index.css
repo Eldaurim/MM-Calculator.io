@@ -89,6 +89,7 @@ a, p, h1, h2 , ul, li{
 
 a , a:visited, a:hover {
     color: aqua;
+    cursor: pointer;
 }
 
 p, ul, li{
@@ -129,27 +130,41 @@ button:hover{
 }
 
 .key_content{
-    display: flex;
-    width: 20%;
-    height: 115px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    display: block;
+    width: 100%;
     margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+}
+
+.column{
+    display: flex;
+    width: 100%;
 }
 
 .name {
-    width: 33%;
+    width: 100%;
 }
 
 .fortified{
-    padding-right: 4px;
+    width: 50%;
+}
+
+.tyranical{
+    width: 50%;
 }
 
 .key_content p{
-    font-size: 12px;
+    font-size: 14px;
 }
 
-.best{
+.key_content a{
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.key_content .best{
     color: rgb(192, 192, 2);
 }
 
