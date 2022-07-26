@@ -93,6 +93,15 @@ function keystone_point_calculator() {
     keystone_point = keystone_point * 0.5;
   }
 
+  let retour = Math.round(keystone_point * 10) / 10;
+
+  let diff_input = document.getElementById("difference")
+  if(diff_input.childNodes.length === 0) {
+
+  } else {
+    document.getElementById("difference_result").innerHTML = (retour - diff_input.textContent).toFixed(1);
+  }  
+
   // Readeable values
-  return Math.round(keystone_point * 10) / 10;
+  return retour;
 }

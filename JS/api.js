@@ -254,6 +254,7 @@ function calculation(dungeon, affixe) {
   
   let raiderio_key_level = document.getElementById(dungeon + "_" + affixe + "_level");
   let raiderio_time_level = document.getElementById(dungeon + "_" + affixe + "_time");
+  let raiderio_score_level = document.getElementById(dungeon + "_" + affixe + "_score");
 
   key_level_input.setAttribute("value", raiderio_key_level.textContent.replace(/\D/g, ''));
   key_level_text.innerHTML = raiderio_key_level.textContent.replace(/\D/g, '');
@@ -268,5 +269,6 @@ function calculation(dungeon, affixe) {
 
   key_time_input.setAttribute("value", raiderio_time_level.textContent.replace(/%/g, ''));
 
+  document.getElementById("difference").innerHTML = raiderio_score_level.textContent;
   document.getElementById("calculator_button").click();
 }

@@ -171,6 +171,21 @@ button:hover{
     color: rgb(192, 192, 2);
 }
 
+.result {
+    display: flex;
+}
+
+#result{
+    margin: auto;
+    margin-right: 15px;
+}
+
+#difference_result {
+    color: rgb(0, 151, 0);
+    margin: auto;
+    margin-left: -1px;
+}
+
 @media screen and (max-width: 1000px) {
     .container {
         margin: 50px 15px 50px 15px;
