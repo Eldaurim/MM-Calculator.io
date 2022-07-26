@@ -267,4 +267,6 @@ function calculation(dungeon, affixe) {
   });
 
   key_time_input.setAttribute("value", raiderio_time_level.textContent.replace(/%/g, ''));
+
+  document.getElementById("calculator_button").click();
 }
