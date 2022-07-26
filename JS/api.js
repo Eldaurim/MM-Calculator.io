@@ -123,6 +123,12 @@ function bestkey(value) {
     let fortified_score = document.createElement("p");
     fortified_score.classList.add("fortified_score");
     fortified_score.setAttribute("id", key.dungeon+"_fortified_score");
+    fortified_score.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      calculation(key.dungeon, "fortified");
+    });
 
     //Key time
     let fortified_time = document.createElement("p");
@@ -144,6 +150,12 @@ function bestkey(value) {
     let tyranical_score = document.createElement("p");
     tyranical_score.classList.add("tyranical_score");
     tyranical_score.setAttribute("id", key.dungeon+"_tyranical_score");
+    tyranical_score.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      calculation(key.dungeon, "tyranical");
+    });
 
     //Key time
     let tyranical_time = document.createElement("p");
@@ -231,4 +243,28 @@ function lowestkey(value) {
       document.getElementById(key.dungeon+"_fortified_time").innerHTML = pourcent+"%";
     }
   });
+}
+
+function calculation(dungeon, affixe) {
+
+  let key_level_input = document.getElementById("key_input");
+  let key_level_text = document.getElementById("output");
+  let key_best_input = document.getElementById("best_key_input");
+  let key_time_input = document.getElementById("time_key_input");
+  
+  let raiderio_key_level = document.getElementById(dungeon + "_" + affixe + "_level");
+  let raiderio_time_level = document.getElementById(dungeon + "_" + affixe + "_time");
+
+  key_level_input.setAttribute("value", raiderio_key_level.textContent.replace(/\D/g, ''));
+  key_level_text.innerHTML = raiderio_key_level.textContent.replace(/\D/g, '');
+
+  raiderio_key_level.classList.forEach(element => {
+    if(element === "best") {
+      key_best_input.checked = true;
+    } else {
+      key_best_input.checked = false;
+    }
+  });
+
+  key_time_input.setAttribute("value", raiderio_time_level.textContent.replace(/%/g, ''));
 }
