@@ -60,10 +60,6 @@
           Best key matches if the key you enter is better than the Fortified or
           Tyranical key.
         </li>
-        <li>
-          Last point you can put a value between -40% and 40% which corresponds
-          to the time of the key which adds or removes bonus points.
-        </li>
       </ul>
       <p>
         There may be a difference between the points displayed and the points
@@ -95,17 +91,6 @@
         />
       </div>
       <div class="m-15">
-        <label for="time_key_input"
-          >Bonus/Malus time (between -40% and 40%):</label
-        >
-        <input
-          type="number"
-          class="time_key_input input"
-          max="40"
-          min="-40"
-          id="time_key_input"
-          value="0"
-        />
       </div>
       <button id="calculator_button" class="m-50" type="button">
         Tell me my score!
@@ -127,7 +112,8 @@
     </footer>
   </body>
 
+  <script type="module" src="JS/function.js"></script>
   <script src="JS/localstorage.js"></script>
-  <script src="JS/timed.js"></script>
-  <script src="JS/api.js"></script>
+  <script type="module" src="JS/timed.js"></script>
+  <script type="module" src="JS/api.js"></script>
 </html>

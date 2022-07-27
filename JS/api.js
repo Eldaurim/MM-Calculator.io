@@ -1,3 +1,5 @@
+import * as lib from './function.js';
+
 const fetch_button = document.getElementById("fetch_button"); //Get DATAS from RaiderIO
 
 fetch_button.addEventListener("click", function (event) {
@@ -250,7 +252,6 @@ function calculation(dungeon, affixe) {
   let key_level_input = document.getElementById("key_input");
   let key_level_text = document.getElementById("output");
   let key_best_input = document.getElementById("best_key_input");
-  let key_time_input = document.getElementById("time_key_input");
   
   let raiderio_key_level = document.getElementById(dungeon + "_" + affixe + "_level");
   let raiderio_time_level = document.getElementById(dungeon + "_" + affixe + "_time");
@@ -259,16 +260,20 @@ function calculation(dungeon, affixe) {
   key_level_input.setAttribute("value", raiderio_key_level.textContent.replace(/\D/g, ''));
   key_level_text.innerHTML = raiderio_key_level.textContent.replace(/\D/g, '');
 
+  let best = false;
+
   raiderio_key_level.classList.forEach(element => {
     if(element === "best") {
       key_best_input.checked = true;
+      best = true;
     } else {
       key_best_input.checked = false;
+      best = false;
     }
   });
 
-  key_time_input.setAttribute("value", raiderio_time_level.textContent.replace(/%/g, ''));
-
   document.getElementById("difference").innerHTML = raiderio_score_level.textContent;
-  document.getElementById("calculator_button").click();
+
+  let result = lib.keystone_point_calculator(raiderio_key_level.textContent.replace(/\D/g, ''), best, raiderio_time_level.textContent.replace(/%/g, ''));
+  document.getElementById("result").innerHTML = result;
 }
