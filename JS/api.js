@@ -188,7 +188,7 @@ function bestkey(value) {
     /**
      * Condition to know where we are in table
      */
-    if(index < 5) {
+    if(index < (value.mythic_plus_best_runs.length/2)) {
       document.getElementById("group_one").appendChild(key_content);
       key_content.appendChild(key_name);
       key_content.appendChild(column);
