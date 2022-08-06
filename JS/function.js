@@ -81,9 +81,25 @@ export function keystone_point_calculator(level, best, time) {
   let diff_input = document.getElementById("difference");
   if (diff_input.childNodes.length === 0) {
   } else {
-    document.getElementById("difference_result").innerHTML = (
-      retour - diff_input.textContent
-    ).toFixed(1);
+
+    let html_diff = document.getElementById("difference_result");
+    let html_new_score = document.getElementById("new_score");
+    let diff = retour - diff_input.textContent;
+
+    if(diff >= 0) {
+
+      html_diff.innerHTML = ("+" + diff.toFixed(1));
+      html_diff.style.color = "#009700";
+
+      let rio_score = document.getElementById("rio_score").textContent;
+      let calc = parseFloat(rio_score) + parseFloat(diff.toFixed(1));
+      html_new_score.innerHTML = calc;
+
+    } else {
+
+      html_diff.innerHTML = (diff.toFixed(1));
+      html_diff.style.color = "#be0000";
+    }
   }
 
   // Readeable values

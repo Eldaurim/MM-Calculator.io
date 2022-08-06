@@ -29,6 +29,10 @@ body {
     width: 160px;
 }
 
+.right {
+    margin-right: 25px;
+}
+
 .input {
     width: 80px;
     height: 40px;
@@ -173,17 +177,11 @@ button:hover{
 
 .result {
     display: flex;
+    justify-content: center;
 }
 
-#result{
-    margin: auto;
-    margin-right: 15px;
-}
-
-#difference_result {
-    color: rgb(0, 151, 0);
-    margin: auto;
-    margin-left: -1px;
+.rio_score{
+    font-size: 30px;
 }
 
 @media screen and (max-width: 1000px) {

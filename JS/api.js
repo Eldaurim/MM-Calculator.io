@@ -72,6 +72,32 @@ fetch_button.addEventListener("click", function (event) {
       document.getElementById("Error_div").innerHTML =
         "Sorry, an error occurred !";
     });
+
+    fetch(
+      "https://raider.io/api/v1/characters/profile?" +
+        new URLSearchParams({
+          region: region,
+          realm: realm,
+          name: name,
+          fields: "mythic_plus_scores_by_season:current",
+        })
+    )
+      .then(function (res) {
+        if (res.ok) {
+          document.getElementById("Error_div").innerHTML = "";
+          return res.json();
+        } else {
+          document.getElementById("Error_div").innerHTML =
+            "Sorry, an error occurred !";
+        }
+      })
+      .then(function (value) {
+        rioscore(value);
+      })
+      .catch(function (err) {
+        document.getElementById("Error_div").innerHTML =
+          "Sorry, an error occurred !";
+      });
 });
 
 /**
@@ -276,4 +302,12 @@ function calculation(dungeon, affixe) {
 
   let result = lib.keystone_point_calculator(raiderio_key_level.textContent.replace(/\D/g, ''), best, raiderio_time_level.textContent.replace(/%/g, ''));
   document.getElementById("result").innerHTML = result;
+}
+
+function rioscore(value) {
+  let score = value.mythic_plus_scores_by_season[0].scores.all;
+  let color = value.mythic_plus_scores_by_season[0].segments.all.color;
+  let html_rio_score = document.getElementById("rio_score");
+  html_rio_score.innerHTML = score;
+  html_rio_score.style.color = color;
 }
