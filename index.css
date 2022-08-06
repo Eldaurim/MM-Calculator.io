@@ -14,7 +14,7 @@ body {
 .container {
     max-width: 1080;
     text-align: center;
-    margin: 50px auto;
+    margin: 15px auto;
 }
 
 .calculator {
@@ -23,6 +23,11 @@ body {
     text-align: center;
     align-items: center;
 
+}
+
+#content {
+    display: flex;
+    margin-bottom: 50px;
 }
 
 #key_input{
@@ -84,7 +89,7 @@ body {
 .footer {
     text-align: center;
     background: #020202;
-    padding: 22px 0 30px 0;
+    padding: 50px 0 30px 0;
 }
 
 a, p, h1, h2 , ul, li{
@@ -94,6 +99,11 @@ a, p, h1, h2 , ul, li{
 a , a:visited, a:hover {
     color: aqua;
     cursor: pointer;
+}
+
+#title {
+    color: #cccccc;
+    text-decoration: none;
 }
 
 p, ul, li{
@@ -187,6 +197,10 @@ button:hover{
 @media screen and (max-width: 1000px) {
     .container {
         margin: 50px 15px 50px 15px;
+    }
+
+    #content {
+        display: block;
     }
 
     .keys_group{
