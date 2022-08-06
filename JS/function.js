@@ -93,10 +93,13 @@ export function keystone_point_calculator(level, best, time) {
 
       let rio_score = document.getElementById("rio_score").textContent;
       let calc = parseFloat(rio_score) + parseFloat(diff.toFixed(1));
-      html_new_score.innerHTML = calc;
+      html_new_score.innerHTML = calc.toFixed(1);
+      html_new_score.style.color = document.getElementById("rio_score").style.color;
 
     } else {
 
+      let rio_score = document.getElementById("rio_score").textContent;
+      html_new_score.innerHTML = parseFloat(rio_score).toFixed(1);
       html_diff.innerHTML = (diff.toFixed(1));
       html_diff.style.color = "#be0000";
     }
