@@ -106,11 +106,28 @@
           Tell me my score!
         </button>
         <div class="result">
-          <h2 class="m-15 right" id="result">Your result here</h2>
-          <p class="m-15 right" id="difference_result"></p>
-          <p class="m-15" id="new_score"></p>
+          <div class="tooltip">
+            <h2 class="m-15 right" id="result">Your result here</h2>
+            <span class="tooltiptext">New key score</span>
+          </div>
+
+          <div class="tooltip">
+            <p class="m-15 right" id="difference_result"></p>
+            <span class="tooltiptext"
+              >Difference between old and new score</span
+            >
+          </div>
+
+          <div class="tooltip">
+            <p class="m-15" id="new_score"></p>
+            <span class="tooltiptext">New rating</span>
+          </div>
         </div>
-        <h3 class="m-15" id="difference"></h3>
+
+        <div class="tooltip">
+          <h3 class="m-15" id="difference"></h3>
+          <span class="tooltiptext">Old key score</span>
+        </div>
       </section>
     </div>
     <footer class="footer">
