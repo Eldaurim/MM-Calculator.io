@@ -196,18 +196,30 @@ function bestkey(value) {
     //Adding DATAS to field with conditional
     if(key.affixes[0].id === 9) {
       key_tyranical_level.classList.add("best");
-      key_tyranical_level.innerHTML = key.affixes[0].name + " +" + key.mythic_level;
+      key_tyranical_level.innerHTML = key.affixes[0].name + " +" + key.mythic_level + "(*)";
       key_tyranical_level.setAttribute("href", key.url);
       tyranical_score.innerHTML = (key.score*1.5).toFixed(1);
       tyranical_time.innerHTML = pourcent + "%";
+
+      if (pourcent < 0) {
+        tyranical_time.style.color = '#be0000';
+      } else {
+        tyranical_time.style.color = '#cccccc';
+      }
     }
 
     if(key.affixes[0].id === 10) {
       key_fortified_level.classList.add("best");
-      key_fortified_level.innerHTML = key.affixes[0].name + " +" + key.mythic_level;
+      key_fortified_level.innerHTML = key.affixes[0].name + " +" + key.mythic_level + "(*)";
       key_fortified_level.setAttribute("href", key.url);
       fortified_score.innerHTML = (key.score*1.5).toFixed(1);
       fortified_time.innerHTML = pourcent + "%";
+
+      if (pourcent < 0) {
+        fortified_time.style.color = '#be0000';
+      } else {
+        fortified_time.style.color = '#cccccc';
+      }
     }
 
 
@@ -262,6 +274,12 @@ function lowestkey(value) {
       document.getElementById(key.dungeon+"_tyranical_level").setAttribute("href", key.url);
       document.getElementById(key.dungeon+"_tyranical_score").innerHTML = (key.score*0.5).toFixed(1);
       document.getElementById(key.dungeon+"_tyranical_time").innerHTML = pourcent+"%";
+
+      if (pourcent < 0) {
+        document.getElementById(key.dungeon+"_tyranical_time").style.color = '#be0000';
+      } else {
+        document.getElementById(key.dungeon+"_tyranical_time").style.color = '#cccccc';
+      }
     }
 
     if(key.affixes[0].id === 10){
@@ -269,6 +287,11 @@ function lowestkey(value) {
       document.getElementById(key.dungeon+"_fortified_level").setAttribute("href", key.url);
       document.getElementById(key.dungeon+"_fortified_score").innerHTML = (key.score*0.5).toFixed(1);
       document.getElementById(key.dungeon+"_fortified_time").innerHTML = pourcent+"%";
+      if (pourcent < 0) {
+        document.getElementById(key.dungeon+"_fortified_time").style.color = '#be0000';
+      } else {
+        document.getElementById(key.dungeon+"_fortified_time").style.color = '#cccccc';
+      }
     }
   });
 }

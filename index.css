@@ -158,6 +158,7 @@ button:hover{
 }
 
 .name {
+    font-weight: bold;
     width: 100%;
 }
 
@@ -176,14 +177,14 @@ button:hover{
 
 .key_content a{
     font-size: 14px;
-    color: #ccc;
+    /*color: #ccc;*/
     text-decoration: none;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
-.key_content .best{
+/* .key_content .best{
     color: rgb(192, 192, 2);
-}
+} */
 
 .result {
     display: flex;
