@@ -22,7 +22,7 @@ fetch_button.addEventListener("click", function (event) {
   /**
    * Fetching DATAS
    */
-  fetch(
+ fetch(
     "https://raider.io/api/v1/characters/profile?" +
       new URLSearchParams({
         region: region,
