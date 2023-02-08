@@ -4,48 +4,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"/>
     <title>MM+ Score calculator</title>
   </head>
 
   <body>
     <header class="header">
       <h1><a id="title" href=".">MM+ Calculator</a></h1>
-
-      <input
-        type="text"
-        class="region input input_header lowercase"
-        id="Region_input"
-        placeholder="Region(US/EU)"
-      />
-
-      <input
-        type="text"
-        class="realm input input_header input_header-left lowercase"
-        id="Realm_input"
-        placeholder="Server name"
-      />
-
-      <input
-        type="text"
-        class="Player input input_header input_header-left"
-        id="Name_input"
-        placeholder="Pseudo"
-      />
-
+      <input type="text" class="region input input_header lowercase" id="Region_input" placeholder="Region(US/EU)"/>
+      <input type="text" class="realm input input_header input_header-left lowercase" id="Realm_input" placeholder="Server name"/>
+      <input type="text" class="Player input input_header input_header-left" id="Name_input" placeholder="Pseudo"/>
       <button id="fetch_button" class="m-50" type="button">Send</button>
-
       <p id="Error_div"></p>
     </header>
 
     <section class="container raiderio_score">
       <div class="keys_group" id="group_one"></div>
-
       <div class="keys_group" id="group_two"></div>
-
       <h3 id="rio_score" class="rio_score"></h3>
     </section>
 
@@ -55,51 +30,23 @@
         <p>Enter the desired key data here.</p>
         <ul>
           <li>Key level corresponds to the desired key level.</li>
-          <li>
-            Best key matches if the key you enter is better than the Fortified
-            or Tyranical key.
-          </li>
+          <li>Best key matches if the key you enter is better than the Fortified or Tyranical key.</li>
         </ul>
-        <p>
-          There may be a difference between the points displayed and the points
-          obtained in game.
-        </p>
-        <p>
-          If you enter your character data you can see your character's high key
-          scores
-        </p>
-        <p>
-          you can click a key's score to calculate the difference with
-          parameters like a better key level
-        </p>
-        <p>
-          you can also click on the difficulty of the key to see which key it
-          is. e.g. "tyranic +12"
-        </p>
+        <p>There may be a difference between the points displayed and the points obtained in game.</p>
+        <p>If you enter your character data you can see your character's high key scores</p>
+        <p>you can click a key's score to calculate the difference with parameters like a better key level</p>
+        <p>you can also click on the difficulty of the key to see which key it is. e.g. "tyranic +12"</p>
       </section>
 
       <section class="container calculator">
         <div class="m-15">
           <label for="key_input">Key level (between 2 and 40):</label>
-          <input
-            type="range"
-            id="key_input"
-            max="40"
-            min="2"
-            step="1"
-            value="2"
-            oninput="this.nextElementSibling.value = this.value"
-          />
+          <input type="range" id="key_input" max="40" min="2" step="1" value="2" oninput="this.nextElementSibling.value = this.value"/>
           <output id="output">2</output>
         </div>
         <div class="m-15">
           <label for="best_key_input">Best Key:</label>
-          <input
-            type="checkbox"
-            id="best_key_input"
-            value="best_key_input"
-            checked="false"
-          />
+          <input type="checkbox" id="best_key_input" value="best_key_input" checked="false"/>
         </div>
         <div class="m-15"></div>
         <button id="calculator_button" class="m-50" type="button">
@@ -113,9 +60,7 @@
 
           <div class="tooltip">
             <h3 class="m-15 right" id="difference_result"></h3>
-            <span class="tooltiptext"
-              >Difference between old and new score</span
-            >
+            <span class="tooltiptext">Difference between old and new score</span>
           </div>
 
           <div class="tooltip">
@@ -133,9 +78,7 @@
     <footer class="footer">
       <p>
         Code written by
-        <a href="https://github.com/Eldaurim/MM-Calculator.io" target="_blank"
-          >Eldau</a
-        >
+        <a href="https://github.com/Eldaurim/MM-Calculator.io" target="_blank">Eldau</a>
       </p>
       <p>Thanks to the raider.io api</p>
     </footer>
