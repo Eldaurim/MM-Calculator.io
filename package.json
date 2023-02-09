@@ -1,0 +1,11 @@
+{
+  "name": "mm-calculator.io",
+  "version": "1.0.0",
+  "description": "MM-Calculator.io",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/index.scss:./css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
