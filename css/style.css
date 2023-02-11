@@ -84,5 +84,10 @@ header .input-error_container .input-container {
   display: flex;
   gap: 40px;
 }
+@media screen and (max-width: 768px) {
+  header .input-error_container .input-container {
+    flex-direction: column;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

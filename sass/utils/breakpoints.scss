@@ -1,0 +1,7 @@
+@import './variables';
+
+@mixin media-breakpoint-down($_key) {
+  @media screen and (max-width: map-get($grid-breakpoints, $_key)) {
+    &{ @content; }
+  }
+}
