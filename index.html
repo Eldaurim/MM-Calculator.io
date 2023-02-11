@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
   <title>MM+ Score calculator</title>
@@ -17,7 +17,10 @@
         <div class="input-container">
           <div class="input-field">
             <label for="region">Region</label>
-            <input id="region" type="text" placeholder="eu" />
+            <select id="region" type="text" placeholder="eu">
+              <option value="eu">EU</option>
+              <option value="us">US</option>
+            </select>
           </div>
           <div class="input-field">
             <label for="server">Server</label>

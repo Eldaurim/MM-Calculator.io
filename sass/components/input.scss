@@ -17,7 +17,9 @@
         font-weight: bold;
     }
     
-    input{
+    input,
+    select{
+        background-color: $white;
         padding: 5px 10px;
         border-top: $border-transparent;
         border-left: $border-transparent;

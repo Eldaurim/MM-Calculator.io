@@ -1,19 +1,29 @@
-.page-width {
-  max-width: 1600px;
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
 body {
   font-family: "Raleway", sans-serif;
+  color: #fff;
+  background-image: linear-gradient(to right top, #D16BA5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5FFBF1);
   font-size: 14px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.page-width {
+  max-width: 1600px;
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+@media screen and (max-width: 768px) {
+  .page-width {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 a {
   text-decoration: none;
-  color: #0075ff;
+  color: #D16BA5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,15 +38,15 @@ h1 {
 button {
   width: 170px;
   background-color: #fff;
-  color: #0075ff;
-  border: 1px solid #0075ff;
+  color: #D16BA5;
+  border: 1px solid #D16BA5;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   font-weight: bold;
   text-transform: uppercase;
 }
 button:hover {
-  background-color: #0075ff;
+  background-color: #D16BA5;
   color: #fff;
   border: none;
 }
@@ -46,7 +56,7 @@ button:hover {
   height: 35px;
 }
 .input-field label {
-  background-color: #0075ff;
+  background-color: #D16BA5;
   color: #fff;
   border: 1px solid transparent;
   transition: all 0.5s ease-in-out;
@@ -57,17 +67,20 @@ button:hover {
   padding: 5px 10px;
   font-weight: bold;
 }
-.input-field input {
+.input-field input,
+.input-field select {
+  background-color: #fff;
   padding: 5px 10px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
-  border-bottom: 1px solid #0075ff;
+  border-bottom: 1px solid #D16BA5;
   transition: all 0.5s ease-in-out;
 }
-.input-field input:focus-visible {
+.input-field input:focus-visible,
+.input-field select:focus-visible {
   outline: none;
-  border: 1px solid #0075ff;
+  border: 1px solid #D16BA5;
 }
 
 header {
