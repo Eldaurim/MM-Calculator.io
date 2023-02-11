@@ -10,37 +10,35 @@
 </head>
 
 <body>
-  <div class="page-width">
-    <header>
-      <h1>MM+ Calculator</h1>
-      <div class="input-error_container">
-        <div class="input-container">
-          <div class="input-field">
-            <label for="region">Region</label>
-            <select id="region" type="text" placeholder="eu">
-              <option value="eu">EU</option>
-              <option value="us">US</option>
-            </select>
+  <header>
+      <div class="page-width">
+        <h1>MM+ Calculator</h1>
+        <div class="input-error_container">
+          <div class="input-container">
+            <div class="input-field">
+              <label for="region">Region</label>
+              <select id="region" type="text" placeholder="eu">
+                <option value="eu">EU</option>
+                <option value="us">US</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label for="server">Server</label>
+              <input id="server" type="text" placeholder="dalaran" />
+            </div>
+            <div class="input-field">
+              <label for="pseudo">Pseudo</label>
+              <input id="pseudo" type="text" placeholder="Eldau" />
+            </div>
+            <button type="button">Send</button>
           </div>
-          <div class="input-field">
-            <label for="server">Server</label>
-            <input id="server" type="text" placeholder="dalaran" />
-          </div>
-          <div class="input-field">
-            <label for="pseudo">Pseudo</label>
-            <input id="pseudo" type="text" placeholder="Eldau" />
-          </div>
-          <button type="button">Send</button>
+          <p id="error-input"></p>
         </div>
-        <p id="error-input"></p>
       </div>
-    </header>
-  
-    <section>
-    </section>
-  
-    <div>
-      <section>
+  </header>
+
+  <div class="page-width score-calculation__container">
+      <section class="score-text-container">
         <h2>Calculate your key score</h2>
         <p>
           Enter the desired key data here.
@@ -54,8 +52,8 @@
           you can also click on the difficulty of the key to see which key it is. e.g. "tyranic +12"
         </p>
       </section>
-  
-      <section>
+
+      <section class="score-calculator__container">
         <div>
           <label for="key_level_input">Key level (between 2 and 40):</label>
           <input type="range" id="key_level_input" max="40" min="2" step="1" value="2"/>
@@ -70,33 +68,34 @@
           <div>
             <div id="result">Your result here</div>
           </div>
-  
+
           <div>
             <div id="difference_result"></div>
           </div>
-  
+
           <div>
             <div id="new_score"></div>
           </div>
         </div>
-  
+
         <div>
           <div id="difference"></div>
         </div>
       </section>
-    </div>
-  
-    <footer>
-      <div>
-        <p>
-          <span>Code written by
-            <a href="https://github.com/Eldaurim/MM-Calculator.io" target="_blank">Eldau</a>
-          </span>
-          <span>Thanks to the raider.io api</span>
-        </p>
-      </div>
-    </footer>
   </div>
+
+  <section class="page-width scoreboard">
+  </section>
+
+  <footer>
+    <div class="page-width footer-container">
+      <p>
+        Code written by
+        <a href="https://github.com/Eldaurim/MM-Calculator.io" target="_blank">Eldau</a>
+        Thanks to the raider.io api
+      </p>
+    </div>
+  </footer>
 </body>
 
 <script type="module" src="JS/function.js" defer></script>

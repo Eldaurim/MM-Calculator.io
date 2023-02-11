@@ -1,16 +1,22 @@
-$primary:  #D16BA5;
-$secondary:  #86A8E7;
-$tertiary:  #5FFBF1;
+@import "./breakpoints.scss";
+
+//color
+$primary: #006e90;
+$secondary: #eaf2ef;
+$background: #0a0f0d;
+$background-body: #1d1d1d;
+$text-color: #eaf2ef;
 $white: #fff;
 $black: #000;
 
-$transition: all .5s ease-in-out;
+//transition
+$transition: all 0.5s ease-in-out;
 
+//border
 $border-transparent: 1px solid transparent;
 $border-primary: 1px solid $primary;
 
-$gradient: linear-gradient(to right top, $primary, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, $tertiary);
-
+//grid
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,

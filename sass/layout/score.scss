@@ -1,0 +1,24 @@
+.score-calculation__container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  gap: 40px;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
+  .score-text-container {
+    flex: 4;
+  }
+
+  .score-calculator__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 2;
+    justify-content: center;
+    font-weight: bold;
+  }
+}

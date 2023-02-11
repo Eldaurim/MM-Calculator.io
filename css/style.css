@@ -1,18 +1,18 @@
 body {
   font-family: "Raleway", sans-serif;
-  color: #fff;
-  background-image: linear-gradient(to right top, #D16BA5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5FFBF1);
+  color: #eaf2ef;
+  background-color: #1d1d1d;
   font-size: 14px;
-  width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
+  position: relative;
 }
 
 .page-width {
-  max-width: 1600px;
-  width: 100%;
+  max-width: 1550px;
   padding-left: 60px;
   padding-right: 60px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
   .page-width {
@@ -23,10 +23,15 @@ body {
 
 a {
   text-decoration: none;
-  color: #D16BA5;
+  color: #006e90;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 500;
   font-size: 25px;
 }
@@ -37,17 +42,18 @@ h1 {
 
 button {
   width: 170px;
-  background-color: #fff;
-  color: #D16BA5;
-  border: 1px solid #D16BA5;
+  min-height: 35px;
+  background-color: transparent;
+  color: #006e90;
+  border: 1px solid #006e90;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   font-weight: bold;
   text-transform: uppercase;
 }
 button:hover {
-  background-color: #D16BA5;
-  color: #fff;
+  background-color: #006e90;
+  color: #eaf2ef;
   border: none;
 }
 
@@ -56,8 +62,8 @@ button:hover {
   height: 35px;
 }
 .input-field label {
-  background-color: #D16BA5;
-  color: #fff;
+  background-color: #006e90;
+  color: #eaf2ef;
   border: 1px solid transparent;
   transition: all 0.5s ease-in-out;
   display: flex;
@@ -69,38 +75,82 @@ button:hover {
 }
 .input-field input,
 .input-field select {
-  background-color: #fff;
+  background-color: transparent;
   padding: 5px 10px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
-  border-bottom: 1px solid #D16BA5;
+  border-bottom: 1px solid #006e90;
   transition: all 0.5s ease-in-out;
 }
 .input-field input:focus-visible,
 .input-field select:focus-visible {
   outline: none;
-  border: 1px solid #D16BA5;
+  border: 1px solid #006e90;
+}
+.input-field select {
+  color: #eaf2ef;
+  background-color: #0a0f0d;
 }
 
 header {
   display: block;
+  background-color: #0a0f0d;
 }
 header h1 {
-  margin-bottom: 40px;
+  padding: 25px 0;
 }
 header .input-error_container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 15px;
 }
 header .input-error_container .input-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   header .input-error_container .input-container {
     flex-direction: column;
   }
+}
+
+.score-calculation__container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .score-calculation__container {
+    flex-direction: column;
+  }
+}
+.score-calculation__container .score-text-container {
+  flex: 4;
+}
+.score-calculation__container .score-calculator__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 2;
+  justify-content: center;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #0a0f0d;
+  padding: 25px 0;
+}
+footer .footer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.scoreboard {
+  min-height: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */

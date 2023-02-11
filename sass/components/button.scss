@@ -1,18 +1,17 @@
-@import '../utils/breakpoints.scss';
+button {
+  width: 170px;
+  min-height: 35px;
+  background-color: transparent;
+  color: $primary;
+  border: 1px solid $primary;
+  cursor: pointer;
+  transition: $transition;
+  font-weight: bold;
+  text-transform: uppercase;
 
-button{
-    width: 170px;
-    background-color: $white;
-    color: $primary;
-    border: 1px solid $primary;
-    cursor: pointer;
-    transition: $transition;
-    font-weight: bold;
-    text-transform: uppercase;
-
-    &:hover{
-        background-color: $primary;
-        color: $white;
-        border: none
-    }
+  &:hover {
+    background-color: $primary;
+    color: $text-color;
+    border: none;
+  }
 }

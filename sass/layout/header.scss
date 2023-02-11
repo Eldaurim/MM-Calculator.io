@@ -1,24 +1,24 @@
-@import '../utils/breakpoints.scss';
+header {
+  display: block;
+  background-color: $background;
 
-header{
-    display: block;
+  h1 {
+    padding: 25px 0;
+  }
 
-    h1{
-        margin-bottom: 40px;
-    }
+  .input-error_container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
 
-    .input-error_container{
-        display: flex;
+    .input-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      @include media-breakpoint-down(sm) {
         flex-direction: column;
-
-        .input-container{
-            display: flex;
-            gap: 40px;
-
-            @include media-breakpoint-down(md){
-                flex-direction: column;
-            }
-        }
+      }
     }
-
+  }
 }

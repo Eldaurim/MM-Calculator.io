@@ -1,35 +1,38 @@
-@import '../utils/breakpoints.scss';
+.input-field {
+  display: flex;
+  height: 35px;
 
-.input-field{
+  label {
+    background-color: $primary;
+    color: $text-color;
+    border: $border-transparent;
+    transition: $transition;
     display: flex;
-    height: 35px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px 10px;
+    font-weight: bold;
+  }
 
-    label{
-        background-color: $primary;
-        color: $white;
-        border: $border-transparent;
-        transition: $transition;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 5px 10px;
-        font-weight: bold;
+  input,
+  select {
+    background-color: transparent;
+    padding: 5px 10px;
+    border-top: $border-transparent;
+    border-left: $border-transparent;
+    border-right: $border-transparent;
+    border-bottom: $border-primary;
+    transition: $transition;
+
+    &:focus-visible {
+      outline: none;
+      border: $border-primary;
     }
-    
-    input,
-    select{
-        background-color: $white;
-        padding: 5px 10px;
-        border-top: $border-transparent;
-        border-left: $border-transparent;
-        border-right: $border-transparent;
-        border-bottom: $border-primary;
-        transition: $transition;
-    
-        &:focus-visible{
-            outline: none;
-            border: $border-primary;
-        }
-    }
+  }
+
+  select {
+    color: $text-color;
+    background-color: $background;
+  }
 }
