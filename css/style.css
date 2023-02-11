@@ -1,277 +1,88 @@
-/* Blue : #0075ff */
+.page-width {
+  max-width: 1600px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
 body {
-  margin: auto;
-  max-width: 1920px;
-  background: #0f0f0f;
   font-family: "Raleway", sans-serif;
+  font-size: 14px;
 }
 
-.header {
-  text-align: center;
-  background: #020202;
-  padding: 20px 0 20px 0;
-}
-
-.container {
-  max-width: 1080;
-  text-align: center;
-  margin: 15px auto;
-}
-
-.calculator {
-  color: #cccccc;
-  font-size: 22px;
-  text-align: center;
-  align-items: center;
-}
-
-#content {
-  display: flex;
-  margin-bottom: 50px;
-}
-
-#key_input {
-  width: 160px;
-}
-
-.right {
-  margin-right: 25px;
-}
-
-.input {
-  width: 80px;
-  height: 40px;
-  border-radius: 10px;
-  padding-left: 10px;
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
-  border: 0px black solid;
-}
-
-.input_header {
-  width: 180px;
-  height: 40px;
-  border-radius: 10px;
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
-  border: 0px black solid;
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #fff;
-  border-bottom-color: #0075ff;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-#Error_div {
-  color: rgb(190, 0, 0);
-}
-
-.input_header-left {
-  margin-left: 50px;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-#fetch_button {
-  margin-left: 50px;
-}
-
-#best_key_input {
-  width: 20px;
-  height: 20px;
-}
-
-.m-15 {
-  margin-bottom: 15px;
-}
-
-.m-50 {
-  margin-bottom: 50px;
-}
-
-.footer {
-  text-align: center;
-  background: #020202;
-  padding: 50px 0 30px 0;
-}
-
-a,
-p,
-h1,
-h2,
-ul,
-li {
-  color: #cccccc;
-}
-
-a,
-a:visited,
-a:hover {
-  color: aqua;
-  cursor: pointer;
-}
-
-#title {
-  color: #cccccc;
+a {
   text-decoration: none;
+  color: #0075ff;
 }
 
-p,
-ul,
-li {
-  font-size: 20px;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-size: 25px;
 }
 
 h1 {
-  font-size: 44px;
-}
-
-h2 {
-  font-size: 36px;
-}
-
-ul,
-li {
-  padding: 0;
-  list-style: none;
+  font-size: 35px;
 }
 
 button {
-  color: #fff;
+  width: 170px;
+  background-color: #fff;
+  color: #0075ff;
+  border: 1px solid #0075ff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+button:hover {
   background-color: #0075ff;
-  width: 200px;
-  height: 40px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: "Raleway", sans-serif;
+  color: #fff;
   border: none;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
-.keys_group {
+.input-field {
   display: flex;
-  margin: auto;
-  width: 100%;
+  height: 35px;
 }
-
-.key_content {
-  display: block;
-  width: 100%;
-  margin: 5px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-}
-
-.column {
-  display: flex;
-  width: 100%;
-}
-
-.name {
-  font-weight: bold;
-  width: 100%;
-}
-
-.fortified {
-  width: 50%;
-}
-
-.tyranical {
-  width: 50%;
-  margin-right: 3px;
-}
-
-.key_content p {
-  font-size: 14px;
-}
-
-.key_content a {
-  font-size: 14px;
-  /*color: #ccc;*/
-  text-decoration: none;
-  /*font-weight: bold;*/
-}
-
-/* .key_content .best{
-    color: rgb(192, 192, 2);
-} */
-.result {
-  display: flex;
-  justify-content: center;
-}
-
-.rio_score {
-  font-size: 30px;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
+.input-field label {
+  background-color: #0075ff;
   color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+.input-field input {
+  padding: 5px 10px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid #0075ff;
+  transition: all 0.5s ease-in-out;
+}
+.input-field input:focus-visible {
+  outline: none;
+  border: 1px solid #0075ff;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+header {
+  display: block;
 }
-
-@media screen and (max-width: 1000px) {
-  .container {
-    margin: 50px 15px 50px 15px;
-  }
-  #content {
-    display: block;
-  }
-  .keys_group {
-    display: block;
-  }
-  .key_content {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #ccc;
-  }
-  .input_header {
-    display: flex;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-  #fetch_button {
-    margin-left: 0px;
-    margin-top: 25px;
-  }
+header h1 {
+  margin-bottom: 40px;
+}
+header .input-error_container {
+  display: flex;
+  flex-direction: column;
+}
+header .input-error_container .input-container {
+  display: flex;
+  gap: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

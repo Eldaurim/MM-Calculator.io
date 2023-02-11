@@ -1,0 +1,16 @@
+button{
+    width: 170px;
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $primary;
+    cursor: pointer;
+    transition: $transition;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover{
+        background-color: $primary;
+        color: $white;
+        border: none
+    }
+}

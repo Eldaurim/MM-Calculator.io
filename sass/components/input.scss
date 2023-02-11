@@ -1,0 +1,31 @@
+.input-field{
+    display: flex;
+    height: 35px;
+
+    label{
+        background-color: $primary;
+        color: $white;
+        border: $border-transparent;
+        transition: $transition;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px 10px;
+        font-weight: bold;
+    }
+    
+    input{
+        padding: 5px 10px;
+        border-top: $border-transparent;
+        border-left: $border-transparent;
+        border-right: $border-transparent;
+        border-bottom: $border-primary;
+        transition: $transition;
+    
+        &:focus-visible{
+            outline: none;
+            border: $border-primary;
+        }
+    }
+}
