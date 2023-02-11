@@ -1,4 +1,4 @@
-import * as lib from "./function.js";
+import * as lib from "../function/functions.js";
 
 const fetch_button = document.getElementById("fetch_button"); //Get DATAS from RaiderIO
 const rio_scord_for_loader = document.querySelector(".rio_score");

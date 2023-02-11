@@ -16,9 +16,23 @@
   .score-calculator__container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     flex: 2;
     justify-content: center;
-    font-weight: bold;
+
+    .score-calculator__input {
+      height: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      gap: 5px;
+
+      &.result {
+        font-weight: bold;
+      }
+    }
+
+    button {
+      margin: 5px 0;
+    }
   }
 }

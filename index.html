@@ -54,33 +54,23 @@
       </section>
 
       <section class="score-calculator__container">
-        <div>
-          <label for="key_level_input">Key level (between 2 and 40):</label>
+        <div class="score-calculator__input">
+          <label for="key_level_input">Key level (between 2 and 40) : </label>
           <input type="range" id="key_level_input" max="40" min="2" step="1" value="2"/>
           <div id="key_level_output"></div>
         </div>
-        <div>
-          <label for="best_key_input">Best Key:</label>
+        <div class="score-calculator__input">
+          <label for="best_key_input">Best Key : </label>
           <input type="checkbox" id="best_key_input" value="best_key_input" checked="false" />
         </div>
-        <button id="calculator_button" class="m-50" type="button">Tell me my score!</button>
-        <div>
-          <div>
-            <div id="result">Your result here</div>
-          </div>
-
-          <div>
-            <div id="difference_result"></div>
-          </div>
-
-          <div>
-            <div id="new_score"></div>
-          </div>
-        </div>
-
-        <div>
+        <button id="calculator_button" class="m-50" type="button">Calculate</button>
+        <div class="score-calculator__input result">
+          <div>Your result : </div>
+          <div id="result-key-calculator"></div>
           <div id="difference"></div>
-        </div>
+          <div id="difference_result"></div>
+          <div id="new_score"></div>
+          <div id="rio_score"></div>
       </section>
   </div>
 
@@ -98,9 +88,6 @@
   </footer>
 </body>
 
-<script type="module" src="JS/function.js" defer></script>
-<script src="JS/localstorage.js"></script>
-<script type="module" src="JS/timed.js" defer></script>
-<script type="module" src="JS/api.js" defer></script>
+<script type="module" src="JS/index.js" defer></script>
 
 </html>

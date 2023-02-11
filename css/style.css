@@ -76,6 +76,7 @@ button:hover {
 .input-field input,
 .input-field select {
   background-color: transparent;
+  color: #eaf2ef;
   padding: 5px 10px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
@@ -134,10 +135,21 @@ header .input-error_container .input-container {
 .score-calculation__container .score-calculator__container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   flex: 2;
   justify-content: center;
+}
+.score-calculation__container .score-calculator__container .score-calculator__input {
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5px;
+}
+.score-calculation__container .score-calculator__container .score-calculator__input.result {
   font-weight: bold;
+}
+.score-calculation__container .score-calculator__container button {
+  margin: 5px 0;
 }
 
 footer {
