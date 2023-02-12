@@ -20,11 +20,10 @@
     }
 
     #keys {
-      border: 1px solid $primary;
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
-      row-gap: 15px;
+      row-gap: 35px;
     }
   }
 }

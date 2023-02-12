@@ -5,8 +5,6 @@ const loader = document.querySelector(".loader");
 const error_div = document.querySelector("#error-input");
 const thumbnail_img = document.querySelector("#thumbnail");
 const keys_div = document.querySelector("#keys");
-//const rio_scord_for_loader = document.querySelector(".rio_score");
-//const loader = document.createElement("span");
 
 function clearingDom() {
   if (keys_div.firstChild) {
@@ -52,10 +50,10 @@ fetch_button.addEventListener("click", function (event) {
   ).then((res) => {
     if (res.ok) {
       res.json().then((data) => {
-        console.log(data);
         //Traitement des données
-        let best_run = data.mythic_plus_best_runs;
+        loader.classList.remove("active");
         thumbnail_img.src = data.thumbnail_url;
+        bestkey(data.mythic_plus_best_runs);
       });
     } else {
       clearingDom();
@@ -74,8 +72,8 @@ fetch_button.addEventListener("click", function (event) {
   ).then((res) => {
     if (res.ok) {
       res.json().then((data) => {
-        console.log(data);
         //traitement des données
+        loader.classList.remove("active");
       });
     } else {
       clearingDom();
@@ -94,8 +92,8 @@ fetch_button.addEventListener("click", function (event) {
   ).then(function (res) {
     if (res.ok) {
       res.json().then((data) => {
-        console.log(data);
         //traitement des données
+        loader.classList.remove("active");
       });
     } else {
       clearingDom();
@@ -104,42 +102,105 @@ fetch_button.addEventListener("click", function (event) {
   });
 });
 
-// /**
-//  *
-//  * Best keys values
-//  */
-// function bestkey(value) {
-//   /**
-//    * Loop to display all best keys in correct field
-//    *
-//    */
-//   value.mythic_plus_best_runs.forEach((key, index) => {
+function pourcentage(time, clear) {
+  let pourcent = ((time / 60000 - clear / 60000) / (time / 6000)) * 1000;
+  pourcent = pourcent.toFixed(1);
+  return `${pourcent}%`;
+}
+
+/**
+ *
+ * Best keys values
+ */
+function bestkey(best_keys) {
+  /**
+   * Loop to display all best keys in correct field
+   *
+   */
+  best_keys.forEach((key) => {
+    console.log(key);
+
+    let card = document.createElement("div");
+    card.classList.add("card");
+    keys_div.appendChild(card);
+
+    let key_name = document.createElement("div");
+    key_name.classList.add("title");
+    key_name.innerHTML = key.dungeon;
+    card.appendChild(key_name);
+
+    let key_content = document.createElement("div");
+    key_content.classList.add("key_content");
+    card.appendChild(key_content);
+
+    let fortified_col = document.createElement("div");
+    let tyranical_col = document.createElement("div");
+    fortified_col.classList.add("card--col", "fortified");
+    tyranical_col.classList.add("card--col", "tyranical");
+    key_content.appendChild(fortified_col);
+    key_content.appendChild(tyranical_col);
+
+    let fortified_level = document.createElement("a");
+    let tyranical_level = document.createElement("a");
+    fortified_level.classList.add("key_level", "fortified_level");
+    tyranical_level.classList.add("key_level", "tyranical_level");
+    fortified_col.appendChild(fortified_level);
+    tyranical_col.appendChild(tyranical_level);
+
+    let fortified_score = document.createElement("div");
+    let tyranical_score = document.createElement("div");
+    fortified_score.classList.add("score", "fortified_score");
+    tyranical_score.classList.add("score", "fortified_time");
+    fortified_col.appendChild(fortified_score);
+    tyranical_col.appendChild(tyranical_score);
+
+    let fortified_time = document.createElement("div");
+    let tyranical_time = document.createElement("div");
+    fortified_time.classList.add("time", "fortified_time");
+    tyranical_time.classList.add("time", "tyranical_time");
+    fortified_col.appendChild(fortified_time);
+    tyranical_col.appendChild(tyranical_time);
+
+    if (key.affixes[0].name == "Fortified") {
+      fortified_level.href = key.url;
+      fortified_level.innerHTML = `Fortified ${key.mythic_level}(*)`;
+      fortified_score.innerHTML = key.score;
+      fortified_time.innerHTML = pourcentage(key.par_time_ms, key.clear_time_ms);
+    } else {
+      tyranical_level.href = key.url;
+      tyranical_level.innerHTML = `Tyranical ${key.mythic_level}(*)`;
+      tyranical_score.innerHTML = key.score;
+      tyranical_time.innerHTML = pourcentage(key.par_time_ms, key.clear_time_ms);
+    }
+  });
+}
+
+//   value.forEach((key, index) => {
 //     //Div content
 //     let key_content = document.createElement("div");
-//     key_content.classList.add("key_content");
+//     key_content.classList.add("card");
 
 //     //Key name
-//     let key_name = document.createElement("p");
-//     key_name.classList.add("name");
+//     let key_name = document.createElement("div");
+//     key_name.classList.add("title");
 //     key_name.innerHTML = key.dungeon;
 
 //     let column = document.createElement("div");
-//     column.classList.add("column");
+//     column.classList.add("key_content");
 
 //     //Fortified table
 //     let fortified = document.createElement("div");
-//     fortified.classList.add("fortified");
+//     fortified.classList.add("card--col fortified");
 
 //     //Key level
 //     let key_fortified_level = document.createElement("a");
-//     key_fortified_level.classList.add("key_level");
-//     key_fortified_level.classList.add("fortified");
+//     key_fortified_level.classList.add("key_level fortified");
 //     key_fortified_level.setAttribute("id", key.dungeon + "_fortified_level");
 //     key_fortified_level.setAttribute("target", "_blank");
 
 //     //Key score
-//     let fortified_score = document.createElement("p");
-//     fortified_score.classList.add("fortified_score");
+//     let fortified_score = document.createElement("div");
+//     fortified_score.classList.add("score");
 //     fortified_score.setAttribute("id", key.dungeon + "_fortified_score");
 //     fortified_score.addEventListener("click", function (event) {
 //       event.preventDefault();
@@ -149,7 +210,7 @@ fetch_button.addEventListener("click", function (event) {
 
 //     //Key time
 //     let fortified_time = document.createElement("p");
-//     fortified_time.classList.add("fortified_time");
+//     fortified_time.classList.add("timer");
 //     fortified_time.setAttribute("id", key.dungeon + "_fortified_time");
 
 //     //Tyranical table

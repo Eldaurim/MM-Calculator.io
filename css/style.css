@@ -124,10 +124,11 @@ button:hover {
   flex-direction: column;
   text-align: center;
   padding: 20px;
-  width: calc(25% - 124px + 84px);
+  gap: 15px;
+  border: 1px solid #00bbf0;
 }
 .card .title {
-  margin-bottom: 15px;
+  font-weight: bold;
 }
 .card .key_content {
   display: flex;
@@ -231,11 +232,10 @@ footer .footer-container {
   height: 84px;
 }
 .scoreboard .display-score #keys {
-  border: 1px solid #00bbf0;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  row-gap: 15px;
+  row-gap: 35px;
 }
 
 /*# sourceMappingURL=style.css.map */

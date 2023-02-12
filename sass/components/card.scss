@@ -3,10 +3,11 @@
   flex-direction: column;
   text-align: center;
   padding: 20px;
-  width: calc(25% - 124px + 84px);
+  gap: 15px;
+  border: $border-primary;
 
   .title {
-    margin-bottom: 15px;
+    font-weight: bold;
   }
 
   .key_content {
