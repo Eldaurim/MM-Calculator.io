@@ -74,6 +74,7 @@ fetch_button.addEventListener("click", function (event) {
       res.json().then((data) => {
         //traitement des données
         loader.classList.remove("active");
+        lowerkey(data.mythic_plus_alternate_runs);
       });
     } else {
       clearingDom();
@@ -105,21 +106,11 @@ fetch_button.addEventListener("click", function (event) {
 function pourcentage(time, clear) {
   let pourcent = ((time / 60000 - clear / 60000) / (time / 6000)) * 1000;
   pourcent = pourcent.toFixed(1);
-  return `${pourcent}%`;
+  return pourcent;
 }
 
-/**
- *
- * Best keys values
- */
 function bestkey(best_keys) {
-  /**
-   * Loop to display all best keys in correct field
-   *
-   */
   best_keys.forEach((key) => {
-    console.log(key);
-
     let card = document.createElement("div");
     card.classList.add("card");
     keys_div.appendChild(card);
@@ -150,7 +141,7 @@ function bestkey(best_keys) {
     let fortified_score = document.createElement("div");
     let tyranical_score = document.createElement("div");
     fortified_score.classList.add("score", "fortified_score");
-    tyranical_score.classList.add("score", "fortified_time");
+    tyranical_score.classList.add("score", "tyranical_score");
     fortified_col.appendChild(fortified_score);
     tyranical_col.appendChild(tyranical_score);
 
@@ -163,16 +154,53 @@ function bestkey(best_keys) {
 
     if (key.affixes[0].name == "Fortified") {
       fortified_level.href = key.url;
-      fortified_level.innerHTML = `Fortified ${key.mythic_level}(*)`;
+      fortified_level.innerHTML = `Fortified +${key.mythic_level}<span class="best">(*)</span>`;
       fortified_score.innerHTML = key.score;
       fortified_time.innerHTML = pourcentage(key.par_time_ms, key.clear_time_ms);
     } else {
       tyranical_level.href = key.url;
-      tyranical_level.innerHTML = `Tyranical ${key.mythic_level}(*)`;
+      tyranical_level.innerHTML = `Tyranical +${key.mythic_level}<span class="best">(*)</span>`;
       tyranical_score.innerHTML = key.score;
       tyranical_time.innerHTML = pourcentage(key.par_time_ms, key.clear_time_ms);
     }
   });
+}
+
+function lowerkey(lower_keys) {
+  const keys_array = [...keys_div.children];
+  console.log(keys_array);
+  keys_array.forEach((key) => {
+    if (key.childNodes[0].innerHTML == lower_keys) {
+      // let arr1 = [1, 2, 3];
+      // let arr2 = [3, 2, 1];
+      // let result = arr1.every((val, index) => val === arr2[index]);
+      // console.log(result); // true
+    }
+  });
+
+  // lower_keys.forEach((key) => {
+  //   let fortified_level = document.querySelector(".fortified_level");
+  //   let fortified_score = document.querySelector(".fortified_score");
+  //   let fortified_time = document.querySelector(".fortified_time");
+  //   let tyranical_level = document.querySelector(".tyranical_level");
+  //   let tyranical_score = document.querySelector(".tyranical_score");
+  //   let tyranical_time = document.querySelector(".tyranical_time");
+  //   if (key.affixes[0].name == "Fortified") {
+  //     fortified_level.href = key.url;
+  //     fortified_level.innerHTML = `Fortified +${key.mythic_level}`;
+  //     fortified_score.innerHTML = key.score;
+  //     let timer = pourcentage(key.par_time_ms, key.clear_time_ms);
+  //     timer <= 0 ? fortified_time.classList.add("negative") : false;
+  //     fortified_time.innerHTML = `${timer}%`;
+  //   } else {
+  //     tyranical_level.href = key.url;
+  //     tyranical_level.innerHTML = `Tyranical +${key.mythic_level}`;
+  //     tyranical_score.innerHTML = key.score;
+  //     let timer = pourcentage(key.par_time_ms, key.clear_time_ms);
+  //     timer <= 0 ? fortified_time.classList.add("negative") : false;
+  //     tyranical_time.innerHTML = `${timer}%`;
+  //   }
+  // });
 }
 
 //   value.forEach((key, index) => {

@@ -126,18 +126,31 @@ button:hover {
   padding: 20px;
   gap: 15px;
   border: 1px solid #00bbf0;
+  max-width: 284px;
+  width: 100%;
 }
 .card .title {
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 .card .key_content {
   display: flex;
-  gap: 15px;
+  gap: 40px;
+  justify-content: center;
 }
-.card .card--col {
+.card .key_content .card--col {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+.card .key_content .card--col .key_level .best {
+  color: gold;
+}
+.card .key_content .card--col .time.negative {
+  color: red;
 }
 
 header {
@@ -236,6 +249,7 @@ footer .footer-container {
   flex-wrap: wrap;
   gap: 40px;
   row-gap: 35px;
+  transition: all 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
