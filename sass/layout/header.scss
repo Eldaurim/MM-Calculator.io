@@ -20,5 +20,11 @@ header {
         flex-direction: column;
       }
     }
+
+    #error-input {
+      color: red;
+      text-align: center;
+      margin-top: 25px;
+    }
   }
 }

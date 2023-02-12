@@ -1,7 +1,30 @@
 .scoreboard {
-  min-height: 300px;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 90px;
+
+  .display-score {
+    display: flex;
+    gap: 124px;
+    margin-bottom: 40px;
+
+    .media {
+      position: relative;
+      display: block;
+
+      img {
+        position: absolute;
+        width: 84px;
+        height: 84px;
+      }
+    }
+
+    #keys {
+      border: 1px solid $primary;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      row-gap: 15px;
+    }
+  }
 }

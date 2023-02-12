@@ -23,7 +23,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #006e90;
+  color: #00bbf0;
 }
 
 h1,
@@ -44,15 +44,15 @@ button {
   width: 170px;
   min-height: 35px;
   background-color: transparent;
-  color: #006e90;
-  border: 1px solid #006e90;
+  color: #00bbf0;
+  border: 1px solid #00bbf0;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   font-weight: bold;
   text-transform: uppercase;
 }
 button:hover {
-  background-color: #006e90;
+  background-color: #00bbf0;
   color: #eaf2ef;
   border: none;
 }
@@ -62,7 +62,7 @@ button:hover {
   height: 35px;
 }
 .input-field label {
-  background-color: #006e90;
+  background-color: #00bbf0;
   color: #eaf2ef;
   border: 1px solid transparent;
   transition: all 0.5s ease-in-out;
@@ -81,13 +81,13 @@ button:hover {
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
-  border-bottom: 1px solid #006e90;
+  border-bottom: 1px solid #00bbf0;
   transition: all 0.5s ease-in-out;
 }
 .input-field input:focus-visible,
 .input-field select:focus-visible {
   outline: none;
-  border: 1px solid #006e90;
+  border: 1px solid #00bbf0;
 }
 .input-field select {
   color: #eaf2ef;
@@ -95,16 +95,20 @@ button:hover {
 }
 
 .loader {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+.loader.active {
   width: 48px;
   height: 48px;
   border: 5px solid transparent;
-  border-bottom-color: #006e90;
+  border-bottom-color: #00bbf0;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 2s linear infinite;
+  opacity: 1;
 }
 
 @keyframes rotation {
@@ -115,6 +119,26 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  width: calc(25% - 124px + 84px);
+}
+.card .title {
+  margin-bottom: 15px;
+}
+.card .key_content {
+  display: flex;
+  gap: 15px;
+}
+.card .card--col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 header {
   display: block;
   background-color: #0a0f0d;
@@ -137,12 +161,17 @@ header .input-error_container .input-container {
     flex-direction: column;
   }
 }
+header .input-error_container #error-input {
+  color: red;
+  text-align: center;
+  margin-top: 25px;
+}
 
 .score-calculation__container {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 90px;
+  margin-bottom: 90px;
   gap: 40px;
 }
 @media screen and (max-width: 768px) {
@@ -183,11 +212,30 @@ footer .footer-container {
 }
 
 .scoreboard {
-  min-height: 300px;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  position: relative;
+  margin-bottom: 90px;
+}
+.scoreboard .display-score {
+  display: flex;
+  gap: 124px;
+  margin-bottom: 40px;
+}
+.scoreboard .display-score .media {
+  position: relative;
+  display: block;
+}
+.scoreboard .display-score .media img {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+}
+.scoreboard .display-score #keys {
+  border: 1px solid #00bbf0;
+  display: flex;
   flex-wrap: wrap;
+  gap: 40px;
+  row-gap: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

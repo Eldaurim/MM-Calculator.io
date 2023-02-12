@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  width: calc(25% - 124px + 84px);
+
+  .title {
+    margin-bottom: 15px;
+  }
+
+  .key_content {
+    display: flex;
+    gap: 15px;
+  }
+
+  .card--col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
