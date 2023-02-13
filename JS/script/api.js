@@ -173,7 +173,7 @@ function lowerkey(lower_keys) {
 
   for (let index = 0; index < lower_keys.length; index++) {
     let result = keys_array.every((val, index) => val.childNodes[0].innerHTML == lower_keys[index].dungeon);
-    console.log(result); // true
+    console.log(result); // A modifier
   }
   
 
