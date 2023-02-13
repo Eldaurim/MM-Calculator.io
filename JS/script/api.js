@@ -169,14 +169,13 @@ function bestkey(best_keys) {
 function lowerkey(lower_keys) {
   const keys_array = [...keys_div.children];
   console.log(keys_array);
-  keys_array.forEach((key) => {
-    if (key.childNodes[0].innerHTML == lower_keys) {
-      // let arr1 = [1, 2, 3];
-      // let arr2 = [3, 2, 1];
-      // let result = arr1.every((val, index) => val === arr2[index]);
-      // console.log(result); // true
-    }
-  });
+  console.log(lower_keys);
+
+  for (let index = 0; index < lower_keys.length; index++) {
+    let result = keys_array.every((val, index) => val.childNodes[0].innerHTML == lower_keys[index].dungeon);
+    console.log(result); // true
+  }
+  
 
   // lower_keys.forEach((key) => {
   //   let fortified_level = document.querySelector(".fortified_level");
