@@ -5,6 +5,7 @@ const loader = document.querySelector(".loader");
 const error_div = document.querySelector("#error-input");
 const thumbnail_img = document.querySelector("#thumbnail");
 const keys_div = document.querySelector("#keys");
+const pseudo = document.querySelector("#pseudo");
 
 function clearingDom() {
   if (keys_div.firstChild) {
@@ -16,6 +17,13 @@ function clearingDom() {
   loader.classList.remove("active");
   error_div.innerHTML = "";
 }
+
+pseudo.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    fetch_button.click();
+  }
+});
 
 fetch_button.addEventListener("click", function (event) {
   event.preventDefault();
