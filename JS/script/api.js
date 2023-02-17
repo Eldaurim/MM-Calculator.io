@@ -168,38 +168,32 @@ function bestkey(best_keys) {
 
 function lowerkey(lower_keys) {
   const keys_array = [...keys_div.children];
-  console.log(keys_array);
-  console.log(lower_keys);
 
-  for (let index = 0; index < lower_keys.length; index++) {
-    let result = keys_array.every((val, index) => val.childNodes[0].innerHTML == lower_keys[index].dungeon);
-    console.log(result); // A modifier
-  }
-  
-
-  // lower_keys.forEach((key) => {
-  //   let fortified_level = document.querySelector(".fortified_level");
-  //   let fortified_score = document.querySelector(".fortified_score");
-  //   let fortified_time = document.querySelector(".fortified_time");
-  //   let tyranical_level = document.querySelector(".tyranical_level");
-  //   let tyranical_score = document.querySelector(".tyranical_score");
-  //   let tyranical_time = document.querySelector(".tyranical_time");
-  //   if (key.affixes[0].name == "Fortified") {
-  //     fortified_level.href = key.url;
-  //     fortified_level.innerHTML = `Fortified +${key.mythic_level}`;
-  //     fortified_score.innerHTML = key.score;
-  //     let timer = pourcentage(key.par_time_ms, key.clear_time_ms);
-  //     timer <= 0 ? fortified_time.classList.add("negative") : false;
-  //     fortified_time.innerHTML = `${timer}%`;
-  //   } else {
-  //     tyranical_level.href = key.url;
-  //     tyranical_level.innerHTML = `Tyranical +${key.mythic_level}`;
-  //     tyranical_score.innerHTML = key.score;
-  //     let timer = pourcentage(key.par_time_ms, key.clear_time_ms);
-  //     timer <= 0 ? fortified_time.classList.add("negative") : false;
-  //     tyranical_time.innerHTML = `${timer}%`;
-  //   }
-  // });
+  lower_keys.forEach((lower) => {
+    keys_array.forEach((key) => {
+      if (key.childNodes[0].textContent === lower.dungeon) {
+        console.log(lower);
+        console.log(key);
+        if (lower.affixes[0].name == "Fortified") {
+          let fortified_level = key.querySelector(".key_level.fortified_level");
+          let fortified_score = key.querySelector(".score.fortified_score");
+          let fortified_time = key.querySelector(".time.fortified_time");
+          fortified_level.href = lower.url;
+          fortified_level.innerHTML = `Fortified +${lower.mythic_level}<span class="best">(*)</span>`;
+          fortified_score.innerHTML = lower.score;
+          fortified_time.innerHTML = pourcentage(lower.par_time_ms, lower.clear_time_ms);
+        } else {
+          let tyranical_level = key.querySelector(".key_level.tyranical_level");
+          let tyranical_score = key.querySelector(".score.tyranical_score");
+          let tyranical_time = key.querySelector(".time.tyranical_time");
+          tyranical_level.href = lower.url;
+          tyranical_level.innerHTML = `Tyranical +${lower.mythic_level}<span class="best">(*)</span>`;
+          tyranical_score.innerHTML = lower.score;
+          tyranical_time.innerHTML = pourcentage(lower.par_time_ms, lower.clear_time_ms);
+        }
+      }
+    });
+  });
 }
 
 //   value.forEach((key, index) => {
