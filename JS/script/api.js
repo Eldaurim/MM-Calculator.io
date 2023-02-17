@@ -180,8 +180,6 @@ function lowerkey(lower_keys) {
   lower_keys.forEach((lower) => {
     keys_array.forEach((key) => {
       if (key.childNodes[0].textContent === lower.dungeon) {
-        console.log(lower);
-        console.log(key);
         if (lower.affixes[0].name == "Fortified") {
           let fortified_level = key.querySelector(".key_level.fortified_level");
           let fortified_score = key.querySelector(".score.fortified_score");
