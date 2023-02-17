@@ -156,12 +156,20 @@ function bestkey(best_keys) {
       fortified_level.href = key.url;
       fortified_level.innerHTML = `Fortified +${key.mythic_level}<span class="best">(*)</span>`;
       fortified_score.innerHTML = key.score;
-      fortified_time.innerHTML = pourcentage(key.par_time_ms, key.clear_time_ms);
+      let timing = pourcentage(key.par_time_ms, key.clear_time_ms);
+      if (timing <= 0) {
+        fortified_time.classList.add("negative");
+      }
+      fortified_time.innerHTML = `${timing}%`;
     } else {
       tyranical_level.href = key.url;
       tyranical_level.innerHTML = `Tyranical +${key.mythic_level}<span class="best">(*)</span>`;
       tyranical_score.innerHTML = key.score;
-      tyranical_time.innerHTML = pourcentage(key.par_time_ms, key.clear_time_ms);
+      let timing = pourcentage(key.par_time_ms, key.clear_time_ms);
+      if (timing <= 0) {
+        tyranical_time.classList.add("negative");
+      }
+      tyranical_time.innerHTML = `${timing}%`;
     }
   });
 }
@@ -181,7 +189,11 @@ function lowerkey(lower_keys) {
           fortified_level.href = lower.url;
           fortified_level.innerHTML = `Fortified +${lower.mythic_level}`;
           fortified_score.innerHTML = lower.score;
-          fortified_time.innerHTML = pourcentage(lower.par_time_ms, lower.clear_time_ms);
+          let timing = pourcentage(lower.par_time_ms, lower.clear_time_ms);
+          if (timing <= 0) {
+            fortified_time.classList.add("negative");
+          }
+          fortified_time.innerHTML = `${timing}%`;
         } else {
           let tyranical_level = key.querySelector(".key_level.tyranical_level");
           let tyranical_score = key.querySelector(".score.tyranical_score");
@@ -189,7 +201,11 @@ function lowerkey(lower_keys) {
           tyranical_level.href = lower.url;
           tyranical_level.innerHTML = `Tyranical +${lower.mythic_level}`;
           tyranical_score.innerHTML = lower.score;
-          tyranical_time.innerHTML = pourcentage(lower.par_time_ms, lower.clear_time_ms);
+          let timing = pourcentage(lower.par_time_ms, lower.clear_time_ms);
+          if (timing <= 0) {
+            tyranical_time.classList.add("negative");
+          }
+          tyranical_time.innerHTML = `${timing}%`;
         }
       }
     });
