@@ -111,7 +111,6 @@ fetch_button.addEventListener("click", function (event) {
       res.json().then((data) => {
         //traitement des données
         loader.classList.remove("active");
-        console.log(data.mythic_plus_scores_by_season[0].segments.all.color);
         let score_rio = document.querySelector(".score_rio");
         score_rio.innerHTML = data.mythic_plus_scores_by_season[0].segments.all.score;
         score_rio.style.color = data.mythic_plus_scores_by_season[0].segments.all.color;
