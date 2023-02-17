@@ -6,6 +6,7 @@ const error_div = document.querySelector("#error-input");
 const thumbnail_img = document.querySelector("#thumbnail");
 const keys_div = document.querySelector("#keys");
 const pseudo = document.querySelector("#pseudo");
+const server = document.querySelector("#server");
 
 function clearingDom() {
   if (keys_div.firstChild) {
@@ -19,6 +20,13 @@ function clearingDom() {
 }
 
 pseudo.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    fetch_button.click();
+  }
+});
+
+server.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     fetch_button.click();
