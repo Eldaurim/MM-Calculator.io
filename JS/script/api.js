@@ -95,6 +95,10 @@ fetch_button.addEventListener("click", function (event) {
       res.json().then((data) => {
         //traitement des données
         loader.classList.remove("active");
+        console.log(data.mythic_plus_scores_by_season[0].segments.all.color);
+        let score_rio = document.querySelector(".score_rio");
+        score_rio.innerHTML = data.mythic_plus_scores_by_season[0].segments.all.score;
+        score_rio.style.color = data.mythic_plus_scores_by_season[0].segments.all.color;
       });
     } else {
       clearingDom();
@@ -155,7 +159,7 @@ function bestkey(best_keys) {
     if (key.affixes[0].name == "Fortified") {
       fortified_level.href = key.url;
       fortified_level.innerHTML = `Fortified +${key.mythic_level}<span class="best">(*)</span>`;
-      fortified_score.innerHTML = key.score;
+      fortified_score.innerHTML = (key.score * 1.5).toFixed(1);
       let timing = pourcentage(key.par_time_ms, key.clear_time_ms);
       if (timing <= 0) {
         fortified_time.classList.add("negative");
@@ -164,7 +168,7 @@ function bestkey(best_keys) {
     } else {
       tyranical_level.href = key.url;
       tyranical_level.innerHTML = `Tyranical +${key.mythic_level}<span class="best">(*)</span>`;
-      tyranical_score.innerHTML = key.score;
+      tyranical_score.innerHTML = (key.score * 1.5).toFixed(1);
       let timing = pourcentage(key.par_time_ms, key.clear_time_ms);
       if (timing <= 0) {
         tyranical_time.classList.add("negative");
@@ -186,7 +190,7 @@ function lowerkey(lower_keys) {
           let fortified_time = key.querySelector(".time.fortified_time");
           fortified_level.href = lower.url;
           fortified_level.innerHTML = `Fortified +${lower.mythic_level}`;
-          fortified_score.innerHTML = lower.score;
+          fortified_score.innerHTML = (lower.score * 0.5).toFixed(1);
           let timing = pourcentage(lower.par_time_ms, lower.clear_time_ms);
           if (timing <= 0) {
             fortified_time.classList.add("negative");
@@ -198,7 +202,7 @@ function lowerkey(lower_keys) {
           let tyranical_time = key.querySelector(".time.tyranical_time");
           tyranical_level.href = lower.url;
           tyranical_level.innerHTML = `Tyranical +${lower.mythic_level}`;
-          tyranical_score.innerHTML = lower.score;
+          tyranical_score.innerHTML = (lower.score * 0.5).toFixed(1);
           let timing = pourcentage(lower.par_time_ms, lower.clear_time_ms);
           if (timing <= 0) {
             tyranical_time.classList.add("negative");

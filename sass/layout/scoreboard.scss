@@ -17,6 +17,15 @@
         width: 84px;
         height: 84px;
       }
+
+      .score_rio {
+        display: flex;
+        position: absolute;
+        top: 25%;
+        left: 0;
+        color: $primary;
+        font-weight: 700;
+      }
     }
 
     #keys {

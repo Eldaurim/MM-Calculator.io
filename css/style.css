@@ -28,15 +28,21 @@ a {
 
 h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
+.h5,
+h6,
+.h6 {
   font-weight: 500;
   font-size: 25px;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 35px;
 }
 
@@ -243,6 +249,14 @@ footer .footer-container {
   position: absolute;
   width: 84px;
   height: 84px;
+}
+.scoreboard .display-score .media .score_rio {
+  display: flex;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  color: #00bbf0;
+  font-weight: 700;
 }
 .scoreboard .display-score #keys {
   display: flex;
