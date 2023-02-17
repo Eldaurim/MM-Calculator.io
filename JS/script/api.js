@@ -179,7 +179,7 @@ function lowerkey(lower_keys) {
           let fortified_score = key.querySelector(".score.fortified_score");
           let fortified_time = key.querySelector(".time.fortified_time");
           fortified_level.href = lower.url;
-          fortified_level.innerHTML = `Fortified +${lower.mythic_level}<span class="best">(*)</span>`;
+          fortified_level.innerHTML = `Fortified +${lower.mythic_level}`;
           fortified_score.innerHTML = lower.score;
           fortified_time.innerHTML = pourcentage(lower.par_time_ms, lower.clear_time_ms);
         } else {
@@ -187,7 +187,7 @@ function lowerkey(lower_keys) {
           let tyranical_score = key.querySelector(".score.tyranical_score");
           let tyranical_time = key.querySelector(".time.tyranical_time");
           tyranical_level.href = lower.url;
-          tyranical_level.innerHTML = `Tyranical +${lower.mythic_level}<span class="best">(*)</span>`;
+          tyranical_level.innerHTML = `Tyranical +${lower.mythic_level}`;
           tyranical_score.innerHTML = lower.score;
           tyranical_time.innerHTML = pourcentage(lower.par_time_ms, lower.clear_time_ms);
         }
